@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
+
+import Header from './Header';
+import Content from './Content';
+import Footer from './Footer';
+
+function App()  {    //functional component = app component
+  
+  /* component return JSX(javascript in xml) =all javascirpt
+  JSX allows to put js expressions in code
+  It renders data as text when it displays it */
+  return ( 
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Content />
+      <Footer />
     </div>
   );
 }
 
-export default App;
+export default App; //export statement
+/* for an expression with a value <p>{"Apeksha"}<p> render as a string {1} also {[1,2,3]}
+{} says its js expresion 
+without {} it will render as it is
+object are not valid can render to the page same for bollean
+*/
