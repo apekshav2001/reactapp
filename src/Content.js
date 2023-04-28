@@ -1,31 +1,19 @@
-const Content = () => {
-    const handleNameChange = () => {
-        const names = ['Bob', 'Kelvin', 'Apeksha'];
-        const int = Math.floor(Math.random() * 3);
-        return names[int];
-      } 
-      const handleClick = () => {
-        console.log('You clicked it!')
-      }
-      const handleClick2 = (name) => {
-        console.log(`${name} was clicked`)
-      }
-      const handleClick3 = (e) => {
-        console.log(e.target.innerText)
-      }
+import ItemList from './ItemList';
+const Content = ({items, handleCheck, handleDelete}) => {     
   return (
     <main>
-        
-         
-       
-        <p onDoubleClick={handleClick}>
-            Hello {handleNameChange()}!
-        </p>
-        <button onClick={handleClick}>Click It</button>
-        <button onClick={() => handleClick2( 'Apeksha')}>Click It</button>
-        <button onClick={(e) => handleClick3(e)}>Click It</button>
+        {items.length ? (
+            <ItemList
+                items={items} 
+                handleCheck={handleCheck}
+                handleDelete={handleDelete}
+            />
+        ) : (
+            <p style={{marginTop:'2rem'}}>Your list is empty</p>
+        )}        
     </main>
   )
 }
 
 export default Content
+// current value of the usestate comes into the function 
